@@ -66,13 +66,17 @@ namespace CodeImp.DoomBuilder.BuilderModes
 			public readonly string TrackTexture;
 			public readonly string CeilingTexture;
 			public readonly bool ResetOffsets;
+            public readonly bool ApplyActionSpecials;
+            public readonly bool ApplyTag;
 
-			public MakeDoorSettings(string doortexture, string tracktexture, string ceilingtexture, bool resetoffsets)
+			public MakeDoorSettings(string doortexture, string tracktexture, string ceilingtexture, bool resetoffsets, bool applyactionspecials, bool applytag)
 			{
 				DoorTexture = doortexture;
 				TrackTexture = tracktexture;
 				CeilingTexture = ceilingtexture;
 				ResetOffsets = resetoffsets;
+                ApplyActionSpecials = applyactionspecials;
+                ApplyTag = applytag;
 			}
 		}
 
@@ -466,7 +470,7 @@ namespace CodeImp.DoomBuilder.BuilderModes
 			//mxd
 			General.Interface.AddDocker(drawingOverridesDocker);
 			drawingOverridesPanel.Setup();
-			MakeDoor = new MakeDoorSettings(General.Map.Config.MakeDoorDoor, General.Map.Config.MakeDoorTrack, General.Map.Config.MakeDoorCeiling, MakeDoor.ResetOffsets);
+			MakeDoor = new MakeDoorSettings(General.Map.Config.MakeDoorDoor, General.Map.Config.MakeDoorTrack, General.Map.Config.MakeDoorCeiling, MakeDoor.ResetOffsets, MakeDoor.ApplyActionSpecials, MakeDoor.ApplyTag);
 			ResetCopyProperties();
 		}
 		
@@ -481,7 +485,7 @@ namespace CodeImp.DoomBuilder.BuilderModes
 			General.Interface.AddDocker(drawingOverridesDocker);
 			drawingOverridesPanel.Setup();
 			General.Map.Renderer2D.UpdateExtraFloorFlag();
-			MakeDoor = new MakeDoorSettings(General.Map.Config.MakeDoorDoor, General.Map.Config.MakeDoorTrack, General.Map.Config.MakeDoorCeiling, MakeDoor.ResetOffsets);
+			MakeDoor = new MakeDoorSettings(General.Map.Config.MakeDoorDoor, General.Map.Config.MakeDoorTrack, General.Map.Config.MakeDoorCeiling, MakeDoor.ResetOffsets, MakeDoor.ApplyActionSpecials, MakeDoor.ApplyTag);
 			ResetCopyProperties();
 		}
 
