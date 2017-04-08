@@ -65,12 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuilderPlug.cs" />
-    <Compile Include="Controls\NumericUpDownEx.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\IntControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Controls\NumericUpDownEx.cs" />
+    <Compile Include="Controls\IntControl.cs" />
     <Compile Include="Controls\IntControl.designer.cs">
       <DependentUpon>IntControl.cs</DependentUpon>
     </Compile>
